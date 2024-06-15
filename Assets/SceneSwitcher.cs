@@ -8,10 +8,7 @@ public class SceneSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        if()
-        SceneManager.LoadScene("the name here");
-        */
+        
     }
 
 
@@ -20,5 +17,26 @@ public class SceneSwitcher : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.name == "door_001") {
+            SceneManager.LoadScene("VRTemplate");
+        }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "door_001")
+        {
+            SceneManager.LoadScene("VRTemplate");
+        }
+        if (other.gameObject.name == "Door_1_Brown")
+        {
+            SceneManager.LoadScene("Okanemochi");
+        }
     }
 }
